@@ -12,4 +12,4 @@ day1c: day1.c
 	gcc day1.c -O3 -o day1c
 
 benchmark: all
-	../benchmark.rb "Go:./day1go" "ruby:Ruby day1.rb" "C++:./day1cpp" "C:./day1c"
+	../benchmark.rb "Go:./day1go" "ruby:Ruby day1.rb" "C++:./day1cpp" "C:./day1c" "Node:node day1.js"
