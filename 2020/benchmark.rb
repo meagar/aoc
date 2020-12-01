@@ -36,6 +36,9 @@ end
 N = 200
 
 test_cases.each do |lang, cmd|
+  # Make sure caches are hot
+  3.times { run(cmd) }
+
   N.times do
     results[lang] << run(cmd)
   end

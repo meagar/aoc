@@ -13,15 +13,16 @@ const int NUMS[] = { 1655, 1384, 1752, 1919, 1972, 1766, 1852, 1835, 1408, 1721,
 	1937, 1255, 1095, 1451, 1395, 1665, 1432, 1693, 1821, 1938, 1941, 2002 };
 
 int main() {
-  for (auto i : NUMS) {
-    for (auto j : NUMS) {
-      auto t = i + j;
+  auto length = 200;
+  for (auto i = 0; i < length; ++i) {
+    for (auto j = i + 1; j < length; ++j) {
+      auto t = NUMS[i] + NUMS[j];
       if (t >= 2020) {
         continue;
       }
       
-      for (auto k : NUMS) {
-        if (t + k == 2020) {
+      for (auto k = j + 1; j < length; ++j) {
+        if (t + NUMS[k] == 2020) {
           std::cout << i << " * " << j << " * " << k << " = " << i * j * k << std::endl;
           return 0;
         }

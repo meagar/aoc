@@ -15,15 +15,15 @@ var nums = []int{1655, 1384, 1752, 1919, 1972, 1766, 1852, 1835, 1408, 1721, 187
 	1937, 1255, 1095, 1451, 1395, 1665, 1432, 1693, 1821, 1938, 1941, 2002}
 
 func main() {
-	for _, i := range nums {
-		for _, j := range nums {
-			t := i + j
+	for i, n1 := range nums {
+		for j, n2 := range nums[i:] {
+			t := n1 + n2
 			if t >= 2020 {
 				continue
 			}
-			for _, k := range nums {
-				if t+k == 2020 {
-					fmt.Printf("%d * %d * %d = %d\n", i, j, k, i*j*k)
+			for _, n3 := range nums[j:] {
+				if t+n3 == 2020 {
+					fmt.Printf("%d * %d * %d = %d\n", n1, n2, n3, n1*n2*n3)
 					return
 				}
 			}

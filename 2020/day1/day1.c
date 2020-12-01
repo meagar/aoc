@@ -17,12 +17,12 @@ const int LENGTH = 200;
 
 int main() {
   for (int i = 0; i < LENGTH; ++i) {
-    for (int j = 0; j < LENGTH; ++j) {
+    for (int j = i + 1; j < LENGTH; ++j) {
       int t = N[i] + N[j];
       if (t >= 2020) {
         continue;
       }
-      for (int k = 0; k < LENGTH; ++k) {
+      for (int k = j + 1; k < LENGTH; ++k) {
         if (t + N[k] == 2020) {
           printf("%d + %d + %d = %d\n", N[i], N[j], N[k], N[i] * N[j] * N[k]);
           return 0;
