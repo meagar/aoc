@@ -15,4 +15,4 @@ day1rust: day1.rs
 	rustc day1.rs -O -o day1rust
 
 benchmark: all
-	../benchmark.rb "Go:./day1go" "Ruby:Ruby day1.rb" "C++:./day1cpp" "C:./day1c" "Node:node day1.js" "Rust:./day1rust"
+	../benchmark.rb "Go:./day1go" "Ruby:Ruby day1.rb" "C++:./day1cpp" "C:./day1c" "Node:node day1.js" "Rust:./day1rust" "Python:python3 day1.py"

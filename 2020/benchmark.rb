@@ -79,7 +79,7 @@ report.each do |data|
   buf << "| #{avg.round(5)} \n"
 
   if lang != best[:lang]
-    buf << "| +#{(avg / best.fetch(:avg) * 100).round(5)}%\n"
+    buf << "| +#{((avg - best.fetch(:avg))/ best.fetch(:avg) * 100).round(5)}%\n"
   else
     buf << "| - \n"
   end 
