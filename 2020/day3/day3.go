@@ -17,31 +17,27 @@ func main() {
 		{1, 2},
 	}
 
-	results := make(chan int)
+	total := 1
 	for _, input := range inputs {
-		go func(dx, dy int, results chan int) {
-			x := 0
-			trees := 0
-			for i, line := range lines {
-				if i%dy != 0 {
-					continue
-				}
-				if line[x] == '#' {
-					trees++
-				}
-				x += dx
-				if x >= len(line) {
-					x -= len(line)
-				}
+		dx := input[0]
+		dy := input[1]
+		x := 0
+		trees := 0
+		for i, line := range lines {
+			if i%dy != 0 {
+				continue
 			}
-			results <- trees
-		}(input[0], input[1], results)
+			if line[x] == '#' {
+				trees++
+			}
+			x += dx
+			if x >= len(line) {
+				x -= len(line)
+			}
+		}
+		total *= trees
 	}
 
-	total := 1
-	for range inputs {
-		total *= <-results
-	}
 	fmt.Println(total)
 }
 
