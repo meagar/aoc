@@ -1,0 +1,25 @@
+= BenchMarking Results
+
+Over 200 iterations:
+
+
+
+|===
+|Language|Total(s)|Average(s)|Diff
+
+| goroutines:
+| 1.33987
+| 0.0067
+| -
+
+| go:
+| 1.3429
+| 0.00671
+| +0.22622%
+
+| ruby:
+| 14.84394
+| 0.07422
+| +1007.86149%
+
+|===
